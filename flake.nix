@@ -6,7 +6,7 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.pkino-desktop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.pkino-nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
