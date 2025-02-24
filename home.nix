@@ -26,6 +26,8 @@
     tree
   ];
 
+  xsession.enable = true;
+
   programs.git = {
     enable = true;
     userName = "pkino";
