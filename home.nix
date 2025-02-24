@@ -3,6 +3,14 @@
     username = "pkino";
     homeDirectory = "/home/${username}";
     stateVersion = "24.11";
+
+    keyboard = {
+      layout = "us";
+      options = [
+        "ctrl:nocaps"
+	"ctrl:swap_rwin_rctl"
+      ];
+    };
   };
 
   home.packages = with pkgs; [
@@ -17,6 +25,8 @@
     # misc
     tree
   ];
+
+  xsession.enable = true;
 
   programs.git = {
     enable = true;
