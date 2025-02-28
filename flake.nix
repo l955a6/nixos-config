@@ -7,9 +7,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, firefox-addons, ... }: {
     nixosConfigurations = {
       pkino = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -25,6 +29,8 @@
           }
         ];
       };
+
+      extraSpecialArgs = { inherit firefox-addons; };
     };
   };
 }
