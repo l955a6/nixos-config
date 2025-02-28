@@ -1,4 +1,8 @@
-{ config, pkgs, ... } : {
+{ config, pkgs, firefox-addons, ... } : {
+  imports = [
+    ./features/firefox.nix
+  ];
+
   home = rec {
     username = "pkino";
     homeDirectory = "/home/${username}";

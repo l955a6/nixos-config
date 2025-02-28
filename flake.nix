@@ -26,11 +26,12 @@
 	    home-manager.useUserPackages = true;
 
 	    home-manager.users.pkino = import ./home.nix;
+	    home-manager.extraSpecialArgs = {
+	      inherit firefox-addons;
+	    };
           }
         ];
       };
-
-      extraSpecialArgs = { inherit firefox-addons; };
     };
   };
 }
