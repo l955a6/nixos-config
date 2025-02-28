@@ -54,7 +54,7 @@
       noto-fonts-emoji
       nerdfonts
     ];
-    fontDir.enabled = true;
+    fontDir.enable = true;
     fontconfig = {
       defaultFonts = {
         serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
