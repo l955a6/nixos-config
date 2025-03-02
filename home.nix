@@ -1,6 +1,7 @@
 { config, pkgs, firefox-addons, ... } : {
   imports = [
     ./features/firefox.nix
+    ./features/alacritty.nix
   ];
 
   home = rec {
