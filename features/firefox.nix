@@ -11,6 +11,10 @@
           to-deepl
         ];
       };
+
+      settings = {
+        autoDisableScopes = 0;
+      };
     };
   };
 }
