@@ -54,7 +54,7 @@
       noto-fonts-emoji
       nerdfonts
     ];
-    fontDir.enabled = true;
+    fontDir.enable = true;
     fontconfig = {
       defaultFonts = {
         serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
@@ -110,13 +110,9 @@
     description = "pkino";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
       xclip
     ];
   };
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
