@@ -26,6 +26,19 @@
     fzf
     fd
 
+    # font
+    (stdenv.mkDerivation rec {
+      pname = "cica";
+      version = "5.0.3";
+      src = fetchurl {
+        url = "https://github.com/miiton/Cica/releases/download/v${version}/Cica_v${version}.zip";
+        sha256 = "cbd1bcf1f3fd1ddbffe444369c76e42529add8538b25aeb75ab682d398b0506f";
+      };
+      nativeBuildInputs = [ unzip ];
+      unpackPhase = "unzip $src";
+      installPhase = "install -m644 --target $out/share/fonts/truetype/cica -D Cica-*.ttf";
+    })
+
     # misc
     tree
   ];
