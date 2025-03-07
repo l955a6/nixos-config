@@ -2,6 +2,7 @@
   imports = [
     ./features/firefox.nix
     ./features/alacritty.nix
+    ./features/fish.nix
   ];
 
   home = rec {
