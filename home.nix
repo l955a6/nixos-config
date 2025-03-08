@@ -1,4 +1,4 @@
-{ config, pkgs, firefox-addons, ... } : {
+{ config, pkgs, firefox-addons, catppuccin, ... } : {
   imports = [
     ./features/firefox.nix
     ./features/alacritty.nix
@@ -53,6 +53,11 @@
     extraConfig = {
       core.editor = "nvim";
     };
+  };
+
+  catppuccin = {
+    flavor = "frappe";
+    enable = true;
   };
 
   programs.home-manager.enable = true;

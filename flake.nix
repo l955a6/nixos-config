@@ -11,9 +11,17 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, firefox-addons, ... }: {
+  outputs = inputs@{
+    self,
+    nixpkgs,
+    home-manager,
+    firefox-addons,
+    catppuccin,
+    ...
+  }: {
     nixosConfigurations = {
       pkino = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -24,8 +32,10 @@
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-
-	    home-manager.users.pkino = import ./home.nix;
+	    home-manager.users.pkino.imports = [
+	      ./home.nix
+	      catppuccin.homeManagerModules.catppuccin
+	    ];
 	    home-manager.extraSpecialArgs = {
 	      inherit firefox-addons;
 	    };
