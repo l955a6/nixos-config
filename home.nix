@@ -1,8 +1,16 @@
-{ config, pkgs, firefox-addons, catppuccin, ... } : {
+{
+  config,
+  pkgs,
+  firefox-addons,
+  catppuccin,
+  nix-vscode-extensions,
+  ...
+} : {
   imports = [
     ./features/firefox.nix
     ./features/alacritty.nix
     ./features/fish.nix
+    ./features/vscode.nix
   ];
 
   home = rec {
