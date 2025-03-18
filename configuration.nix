@@ -77,10 +77,11 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
+  # Enable the Hyprland
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = false;
-  services.xserver.desktopManager.gnome.enable = true;
+  programs.hyprland.enable = true;
+  # Electron apps to use Wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
