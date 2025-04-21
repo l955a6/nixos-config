@@ -14,6 +14,9 @@
       ];
 
       bindd = [
+        # Shortcuts
+	"$mainMod, q, Kill the focused application, killactive"
+
         # Applications
         "$mainMod, return, Open Alacritty, exec, alacritty"
 	"$mainMod, d, 	   Open Rofi,      exec, rofi -show drun"
