@@ -8,6 +8,7 @@
 } : {
   imports = [
     ./features/hyprland.nix
+    ./features/tmux.nix
     ./features/firefox.nix
     ./features/alacritty.nix
     ./features/fish.nix
