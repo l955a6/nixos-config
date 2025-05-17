@@ -37,6 +37,7 @@
     eza
     fzf
     fd
+    killall
 
     # font
     (stdenv.mkDerivation rec {
