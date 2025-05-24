@@ -52,6 +52,11 @@
       installPhase = "install -m644 --target $out/share/fonts/truetype/cica -D Cica-*.ttf";
     })
 
+    # language servers & formatters
+    ## Nix Lang
+    nixd
+    nixfmt
+
     # misc
     tree
   ];
