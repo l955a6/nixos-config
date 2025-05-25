@@ -60,8 +60,16 @@
     enable = true;
     userName = "pkino";
     userEmail = "pkino@pkino.net";
-    extraConfig = { core.editor = "nvim"; };
+    extraConfig = {
+      core = {
+        editor = "nvim";
+        excludesfile = "${config.home.homeDirectory}/.config/git/ignore";
+      };
+    };
   };
+  home.file.".config/git/ignore".text = ''
+    .envrc
+  '';
 
   programs.direnv = {
     enable = true;
