@@ -19,11 +19,7 @@
       # Nix IDE config
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
-      "nix.serverSettings" = {
-        "formatting" = {
-	  "command" = ["nixfmt"];
-	};
-      };
+      "nix.serverSettings" = { "formatting" = { "command" = [ "nixfmt" ]; }; };
     };
 
     extensions = let
@@ -35,6 +31,7 @@
       catppuccin.catppuccin-vsc-icons
       # lsp clients
       jnoortheen.nix-ide
+      scalameta.metals
       # misc
       asvetliakov.vscode-neovim
       marp-team.marp-vscode
