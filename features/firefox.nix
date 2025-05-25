@@ -12,9 +12,7 @@
         ];
       };
 
-      settings = {
-        autoDisableScopes = 0;
-      };
+      settings = { autoDisableScopes = 0; };
     };
   };
 }
