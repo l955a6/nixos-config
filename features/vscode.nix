@@ -31,6 +31,7 @@
       catppuccin.catppuccin-vsc-icons
       # lsp clients
       jnoortheen.nix-ide
+      scalameta.metals
       # misc
       asvetliakov.vscode-neovim
       marp-team.marp-vscode
