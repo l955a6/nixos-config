@@ -15,28 +15,28 @@
 
         glyph_offset = {
           x = 0;
-	  y = 0;
+          y = 0;
         };
 
-	normal = {
-	  family = "Cica";
-	  style = "Regular";
-	};
+        normal = {
+          family = "Cica";
+          style = "Regular";
+        };
 
-	bold = {
-	  family = "Cica";
-	  style = "Bold";
-	};
+        bold = {
+          family = "Cica";
+          style = "Bold";
+        };
 
-	italic = {
-	  family = "Cica";
-	  style = "Italic";
-	};
+        italic = {
+          family = "Cica";
+          style = "Italic";
+        };
 
-	bold_italic = {
-	  family = "Cica";
-	  style = "Bold Italic";
-	};
+        bold_italic = {
+          family = "Cica";
+          style = "Bold Italic";
+        };
       };
     };
   };

@@ -27,7 +27,8 @@
     };
 
     extensions = let
-      vscode-marketplace = nix-vscode-extensions.extensions."x86_64-linux".vscode-marketplace;
+      vscode-marketplace =
+        nix-vscode-extensions.extensions."x86_64-linux".vscode-marketplace;
     in with vscode-marketplace; [
       # theme
       catppuccin.catppuccin-vsc

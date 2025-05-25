@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -44,7 +44,7 @@
 
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = [pkgs.fcitx5-mozc];
+    fcitx5.addons = [ pkgs.fcitx5-mozc ];
   };
 
   fonts = {
@@ -57,22 +57,15 @@
     fontDir.enable = true;
     fontconfig = {
       defaultFonts = {
-        serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
-	sansSerif = ["Noto Sans CJK JP" "Noto Color Emoji"];
-	monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-	emoji = ["Noto Color Emoji"];
+        serif = [ "Noto Serif CJK JP" "Noto Color Emoji" ];
+        sansSerif = [ "Noto Sans CJK JP" "Noto Color Emoji" ];
+        monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };
 
-  nix = {
-    settings = {
-      experimental-features = [
-        "nix-command"
-	"flakes"
-      ];
-    };
-  };
+  nix = { settings = { experimental-features = [ "nix-command" "flakes" ]; }; };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -110,9 +103,7 @@
     isNormalUser = true;
     description = "pkino";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      xclip
-    ];
+    packages = with pkgs; [ xclip ];
   };
 
   # Allow unfree packages
@@ -121,10 +112,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     neovim
     git
-  #  wget
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
