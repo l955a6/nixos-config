@@ -63,6 +63,11 @@
     extraConfig = { core.editor = "nvim"; };
   };
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   catppuccin = {
     flavor = "frappe";
     enable = true;
