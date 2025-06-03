@@ -20,6 +20,9 @@
   };
 
   home.packages = with pkgs; [
+    # tui tools
+    tig
+
     # utils
     ripgrep
     jq
@@ -67,9 +70,31 @@
       };
     };
   };
-  home.file.".config/git/ignore".text = ''
-    .envrc
-  '';
+
+  xdg.configFile = {
+    "git/ignore".text = ''
+      .envrc
+    '';
+
+    "tig/config".text = ''
+      set refresh-mode = auto
+
+      # move page-up/down like vim
+      bind generic <C-f> move-page-down
+      bind generic <C-b> move-page-up
+      bind generic g     none
+      bind generic gg    move-first-line
+      bind main    G     move-last-line
+      bind generic G     move-last-line
+
+      # execute rebase
+      bind main    <C-r> !git rebase -i %(commit)
+      bind generic <C-r> !git rebase -i %(commit) 
+
+      # tmp commit
+      bind status  T     !git commit -m 'tmp'
+    '';
+  };
 
   programs.direnv = {
     enable = true;
