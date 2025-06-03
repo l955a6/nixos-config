@@ -70,28 +70,31 @@
       };
     };
   };
-  home.file.".config/git/ignore".text = ''
-    .envrc
-  '';
 
-  xdg.configFile."tig/config".text = ''
-    set refresh-mode = auto
+  xdg.configFile = {
+    "git/ignore".text = ''
+      .envrc
+    '';
 
-    # move page-up/down like vim
-    bind generic <C-f> move-page-down
-    bind generic <C-b> move-page-up
-    bind generic g     none
-    bind generic gg    move-first-line
-    bind main    G     move-last-line
-    bind generic G     move-last-line
+    "tig/config".text = ''
+      set refresh-mode = auto
 
-    # execute rebase
-    bind main    <C-r> !git rebase -i %(commit)
-    bind generic <C-r> !git rebase -i %(commit) 
+      # move page-up/down like vim
+      bind generic <C-f> move-page-down
+      bind generic <C-b> move-page-up
+      bind generic g     none
+      bind generic gg    move-first-line
+      bind main    G     move-last-line
+      bind generic G     move-last-line
 
-    # tmp commit
-    bind status  T     !git commit -m 'tmp'
-  '';
+      # execute rebase
+      bind main    <C-r> !git rebase -i %(commit)
+      bind generic <C-r> !git rebase -i %(commit) 
+
+      # tmp commit
+      bind status  T     !git commit -m 'tmp'
+    '';
+  };
 
   programs.direnv = {
     enable = true;
