@@ -6,6 +6,7 @@
       input = { kb_options = "ctrl:nocaps,ctrl:swap_rwin_rctl"; };
       "$mainMod" = "SUPER";
       "$shift" = "SHIFT";
+      "$alt" = "ALT";
 
       exec-once = [ "fcitx5 -D" ];
 
@@ -28,6 +29,10 @@
         "$mainMod $shift, j, Move window down,  movewindow, d"
         "$mainMod $shift, k, Move window up,    movewindow, u"
         "$mainMod $shift, l, Move window right, movewindow, r"
+
+        # screen shot
+        "$mainMod $alt, 3, Take a full-screen screenshot,  exec, hyprshot -m output ~/Pictures -f hyprshot_$(date +%s).png -c"
+        "$mainMod $alt, 4, Take a screenshot of selection, exec, hyprshot -m region ~/Pictures -f hyprshot_$(date +%s).png -c"
       ] ++ (builtins.concatLists (builtins.genList (i:
         let workSpace = i + 1;
         in [
