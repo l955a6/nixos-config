@@ -20,9 +20,6 @@
   };
 
   home.packages = with pkgs; [
-    # tui tools
-    tig
-
     # utils
     ripgrep
     jq
@@ -52,6 +49,12 @@
     ## Nix Lang
     nixd
     nixfmt
+
+    # tui tools
+    tig
+
+    # gui tools
+    zathura
 
     # misc
     tree
