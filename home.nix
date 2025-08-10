@@ -108,10 +108,7 @@
     nix-direnv.enable = true;
   };
 
-  catppuccin = {
-    flavor = "frappe";
-    enable = true;
-  };
+  catppuccin = { flavor = "frappe"; };
 
   programs.home-manager.enable = true;
 }
