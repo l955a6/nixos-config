@@ -56,6 +56,9 @@
     # gui tools
     zathura
 
+    # software-development
+    devbox
+
     # misc
     tree
     hyprshot
