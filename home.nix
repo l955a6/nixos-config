@@ -49,6 +49,7 @@
     ## Nix Lang
     nixd
     nixfmt
+    gopls
 
     # tui tools
     tig
@@ -58,6 +59,9 @@
 
     # software-development
     devbox
+
+    # programming-language
+    go
 
     # misc
     tree

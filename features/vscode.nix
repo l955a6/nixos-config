@@ -32,6 +32,7 @@
       # lsp clients
       jnoortheen.nix-ide
       scalameta.metals
+      golang.go
       # misc
       asvetliakov.vscode-neovim
       marp-team.marp-vscode
