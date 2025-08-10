@@ -10,6 +10,8 @@
           vimium
           to-deepl
         ];
+
+        force = true;
       };
 
       settings = { autoDisableScopes = 0; };
