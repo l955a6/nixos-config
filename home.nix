@@ -45,6 +45,10 @@
         "install -m644 --target $out/share/fonts/truetype/cica -D Cica-*.ttf";
     })
 
+    # programming-languages & version management tools
+    go
+    elan
+
     # language servers & formatters
     ## Nix Lang
     nixd
@@ -59,9 +63,6 @@
 
     # software-development
     devbox
-
-    # programming-language
-    go
 
     # misc
     tree
@@ -105,6 +106,11 @@
       # tmp commit
       bind status  T     !git commit -m 'tmp'
     '';
+  };
+
+  home.file = {
+    ".elan/settings.toml".text =
+      builtins.readFile ./dotfiles/.elan/settings.toml;
   };
 
   programs.direnv = {
