@@ -33,6 +33,7 @@
       jnoortheen.nix-ide
       scalameta.metals
       golang.go
+      leanprover.lean4
       # misc
       asvetliakov.vscode-neovim
       marp-team.marp-vscode
