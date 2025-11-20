@@ -60,6 +60,7 @@
 
     # gui tools
     zathura
+    obsidian
 
     # software-development
     devbox
