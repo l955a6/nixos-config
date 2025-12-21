@@ -72,7 +72,7 @@
 
   # Enable the Hyprland
   services.xserver.displayManager.gdm.enable = true;
-  programs.hyprland.enable = true;
+  programs.niri.enable = true;
   # Electron apps to use Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 

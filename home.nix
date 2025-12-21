@@ -1,6 +1,5 @@
 { config, pkgs, firefox-addons, catppuccin, nix-vscode-extensions, ... }: {
   imports = [
-    ./features/hyprland.nix
     ./features/tmux.nix
     ./features/firefox.nix
     ./features/alacritty.nix
@@ -20,6 +19,9 @@
   };
 
   home.packages = with pkgs; [
+    # desktop
+    fuzzel
+
     # utils
     ripgrep
     jq
@@ -107,6 +109,8 @@
       # tmp commit
       bind status  T     !git commit -m 'tmp'
     '';
+
+    "niri/config.kdl".source = ./dotfiles/.config/niri/config.kdl;
   };
 
   home.file = {
