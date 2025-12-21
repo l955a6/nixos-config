@@ -1,6 +1,13 @@
-{ config, pkgs, firefox-addons, catppuccin, nix-vscode-extensions, ... }: {
+{
+  config,
+  pkgs,
+  firefox-addons,
+  catppuccin,
+  nix-vscode-extensions,
+  ...
+}:
+{
   imports = [
-    ./features/hyprland.nix
     ./features/tmux.nix
     ./features/firefox.nix
     ./features/alacritty.nix
@@ -11,15 +18,21 @@
   home = rec {
     username = "pkino";
     homeDirectory = "/home/${username}";
-    stateVersion = "25.05";
+    stateVersion = "25.11";
 
     keyboard = {
       layout = "us";
-      options = [ "ctrl:nocaps" "ctrl:swap_rwin_rctl" ];
+      options = [
+        "ctrl:nocaps"
+        "ctrl:swap_rwin_rctl"
+      ];
     };
   };
 
   home.packages = with pkgs; [
+    # desktop
+    fuzzel
+
     # utils
     ripgrep
     jq
@@ -34,15 +47,12 @@
       pname = "cica";
       version = "5.0.3";
       src = fetchurl {
-        url =
-          "https://github.com/miiton/Cica/releases/download/v${version}/Cica_v${version}.zip";
-        sha256 =
-          "cbd1bcf1f3fd1ddbffe444369c76e42529add8538b25aeb75ab682d398b0506f";
+        url = "https://github.com/miiton/Cica/releases/download/v${version}/Cica_v${version}.zip";
+        sha256 = "cbd1bcf1f3fd1ddbffe444369c76e42529add8538b25aeb75ab682d398b0506f";
       };
       nativeBuildInputs = [ unzip ];
       unpackPhase = "unzip $src";
-      installPhase =
-        "install -m644 --target $out/share/fonts/truetype/cica -D Cica-*.ttf";
+      installPhase = "install -m644 --target $out/share/fonts/truetype/cica -D Cica-*.ttf";
     })
 
     # programming-languages & version management tools
@@ -107,11 +117,12 @@
       # tmp commit
       bind status  T     !git commit -m 'tmp'
     '';
+
+    "niri/config.kdl".source = ./dotfiles/.config/niri/config.kdl;
   };
 
   home.file = {
-    ".elan/settings.toml".text =
-      builtins.readFile ./dotfiles/.elan/settings.toml;
+    ".elan/settings.toml".text = builtins.readFile ./dotfiles/.elan/settings.toml;
   };
 
   programs.direnv = {
@@ -119,7 +130,9 @@
     nix-direnv.enable = true;
   };
 
-  catppuccin = { flavor = "frappe"; };
+  catppuccin = {
+    flavor = "frappe";
+  };
 
   programs.home-manager.enable = true;
 }

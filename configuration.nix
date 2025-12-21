@@ -51,7 +51,7 @@
     fonts = with pkgs; [
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       nerd-fonts.noto
     ];
     fontDir.enable = true;
@@ -72,7 +72,7 @@
 
   # Enable the Hyprland
   services.xserver.displayManager.gdm.enable = true;
-  programs.hyprland.enable = true;
+  programs.niri.enable = true;
   # Electron apps to use Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 

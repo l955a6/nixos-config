@@ -2,7 +2,7 @@
   description = "pkino's NixOS flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,7 +28,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.pkino.imports =
-                [ ./home.nix catppuccin.homeManagerModules.catppuccin ];
+                [ ./home.nix catppuccin.homeModules.catppuccin ];
               home-manager.extraSpecialArgs = {
                 inherit firefox-addons;
                 inherit nix-vscode-extensions;
