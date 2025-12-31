@@ -56,6 +56,29 @@
             }
           ];
         };
+
+        xps9320 = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/xps9320/configuration.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.pkino.imports = [
+                ./home.nix
+                catppuccin.homeManagerModules.catppuccin
+              ];
+              home-manager.extraSpecialArgs = {
+                inherit firefox-addons;
+                inherit nix-vscode-extensions;
+                inherit pkgs;
+                inherit system;
+              };
+            }
+          ];
+        };
       };
     };
 }
