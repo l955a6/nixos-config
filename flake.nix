@@ -15,11 +15,27 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, firefox-addons
-    , nix-vscode-extensions, catppuccin, ... }: {
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      firefox-addons,
+      nix-vscode-extensions,
+      catppuccin,
+      ...
+    }:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+    {
       nixosConfigurations = {
         pkino = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           modules = [
             ./configuration.nix
 
@@ -27,11 +43,15 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.pkino.imports =
-                [ ./home.nix catppuccin.homeModules.catppuccin ];
+              home-manager.users.pkino.imports = [
+                ./home.nix
+                catppuccin.homeManagerModules.catppuccin
+              ];
               home-manager.extraSpecialArgs = {
                 inherit firefox-addons;
                 inherit nix-vscode-extensions;
+                inherit pkgs;
+                inherit system;
               };
             }
           ];

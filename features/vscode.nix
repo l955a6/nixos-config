@@ -1,4 +1,9 @@
-{ pkgs, nix-vscode-extensions, ... }:
+{
+  pkgs,
+  nix-vscode-extensions,
+  system,
+  ...
+}:
 {
   programs.vscode = {
     enable = true;
@@ -39,7 +44,7 @@
 
     extensions =
       let
-        vscode-marketplace = nix-vscode-extensions.extensions."x86_64-linux".vscode-marketplace;
+        vscode-marketplace = nix-vscode-extensions.extensions.${system}.vscode-marketplace;
       in
       with vscode-marketplace;
       [

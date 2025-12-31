@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  firefox-addons,
-  catppuccin,
-  nix-vscode-extensions,
-  ...
-}:
+{ config, pkgs, ... }:
 {
   imports = [
     ./features/tmux.nix
