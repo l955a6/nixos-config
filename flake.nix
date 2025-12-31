@@ -37,7 +37,7 @@
         pkino = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
-            ./configuration.nix
+            ./hosts/desktop-dev/configuration.nix
 
             home-manager.nixosModules.home-manager
             {
