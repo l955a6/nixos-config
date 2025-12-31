@@ -34,7 +34,7 @@
     in
     {
       nixosConfigurations = {
-        pkino = nixpkgs.lib.nixosSystem {
+        desktop-dev = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             ./hosts/desktop-dev/configuration.nix
