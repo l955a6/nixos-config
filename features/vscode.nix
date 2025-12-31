@@ -1,6 +1,17 @@
-{ pkgs, nix-vscode-extensions, ... }: {
+{ pkgs, nix-vscode-extensions, ... }:
+{
   programs.vscode = {
     enable = true;
+
+    package = (
+      pkgs.vscode.override {
+        commandLineArgs = [
+          "--ozone-platform=wayland"
+          "--enable-features=WaylandWindowDecorations"
+          "--enable-wayland-ime"
+        ];
+      }
+    );
 
     userSettings = {
       "workbench.colorTheme" = "Catppuccin Frappé";
@@ -19,26 +30,32 @@
       # Nix IDE config
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
-      "nix.serverSettings" = { "formatting" = { "command" = [ "nixfmt" ]; }; };
+      "nix.serverSettings" = {
+        "formatting" = {
+          "command" = [ "nixfmt" ];
+        };
+      };
     };
 
-    extensions = let
-      vscode-marketplace =
-        nix-vscode-extensions.extensions."x86_64-linux".vscode-marketplace;
-    in with vscode-marketplace; [
-      # theme
-      catppuccin.catppuccin-vsc
-      catppuccin.catppuccin-vsc-icons
-      # lsp clients
-      jnoortheen.nix-ide
-      scalameta.metals
-      golang.go
-      leanprover.lean4
-      # misc
-      asvetliakov.vscode-neovim
-      marp-team.marp-vscode
-      gera2ld.markmap-vscode
-      jetpack-io.devbox
-    ];
+    extensions =
+      let
+        vscode-marketplace = nix-vscode-extensions.extensions."x86_64-linux".vscode-marketplace;
+      in
+      with vscode-marketplace;
+      [
+        # theme
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
+        # lsp clients
+        jnoortheen.nix-ide
+        scalameta.metals
+        golang.go
+        leanprover.lean4
+        # misc
+        asvetliakov.vscode-neovim
+        marp-team.marp-vscode
+        gera2ld.markmap-vscode
+        jetpack-io.devbox
+      ];
   };
 }
