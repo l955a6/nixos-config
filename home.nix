@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  firefox-addons,
-  catppuccin,
-  nix-vscode-extensions,
-  ...
-}:
+{ config, pkgs, ... }:
 {
   imports = [
     ./features/tmux.nix
@@ -41,6 +34,7 @@
     fzf
     fd
     killall
+    xclip
 
     # font
     (stdenv.mkDerivation rec {
@@ -60,9 +54,12 @@
     elan
 
     # language servers & formatters
+
     ## Nix Lang
     nixd
     nixfmt
+
+    ## golang
     gopls
 
     # tui tools

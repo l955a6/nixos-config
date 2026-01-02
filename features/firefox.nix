@@ -1,9 +1,10 @@
-{ pkgs, config, firefox-addons, ... }: {
+{ firefox-addons, system, ... }:
+{
   programs.firefox = {
     enable = true;
     profiles.pkino = {
       extensions = {
-        packages = with firefox-addons.packages."x86_64-linux"; [
+        packages = with firefox-addons.packages.${system}; [
           control-panel-for-twitter
           leechblock-ng
           ublock-origin
@@ -14,7 +15,9 @@
         force = true;
       };
 
-      settings = { autoDisableScopes = 0; };
+      settings = {
+        autoDisableScopes = 0;
+      };
     };
   };
 }
