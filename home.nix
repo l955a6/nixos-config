@@ -24,6 +24,7 @@
 
   home.packages = with pkgs; [
     # desktop
+    waybar
     fuzzel
 
     # utils
@@ -117,6 +118,8 @@
 
     "niri/config.kdl".source = ./dotfiles/.config/niri/config.kdl;
   };
+
+  programs.waybar.enable = true;
 
   home.file = {
     ".elan/settings.toml".text = builtins.readFile ./dotfiles/.elan/settings.toml;
