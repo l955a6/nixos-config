@@ -61,6 +61,7 @@
         marp-team.marp-vscode
         gera2ld.markmap-vscode
         jetpack-io.devbox
+        rogalmic.bash-debug
       ];
   };
 }
