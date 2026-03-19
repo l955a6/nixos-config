@@ -2,7 +2,7 @@
 {
   programs.firefox = {
     enable = true;
-    profiles.pkino = {
+    profiles.l955a6 = {
       extensions = {
         packages = with firefox-addons.packages.${system}; [
           control-panel-for-twitter
