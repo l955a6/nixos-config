@@ -66,7 +66,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.pkino.imports = [
+              home-manager.users.l955a6.imports = [
                 ./home.nix
                 catppuccin.homeManagerModules.catppuccin
               ];
