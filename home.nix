@@ -117,6 +117,8 @@
     '';
 
     "niri/config.kdl".source = ./dotfiles/.config/niri/config.kdl;
+
+    "zathura/zathurarc".source = ./dotfiles/.config/zathura/zathurarc;
   };
 
   programs.waybar.enable = true;
