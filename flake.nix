@@ -1,5 +1,5 @@
 {
-  description = "pkino's NixOS flake";
+  description = "l955a6's NixOS flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
@@ -43,7 +43,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.pkino.imports = [
+              home-manager.users.l955a6.imports = [
                 ./home.nix
                 catppuccin.homeManagerModules.catppuccin
               ];
@@ -66,7 +66,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.pkino.imports = [
+              home-manager.users.l955a6.imports = [
                 ./home.nix
                 catppuccin.homeManagerModules.catppuccin
               ];

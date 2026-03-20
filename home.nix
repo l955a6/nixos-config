@@ -9,7 +9,7 @@
   ];
 
   home = rec {
-    username = "pkino";
+    username = "l955a6";
     homeDirectory = "/home/${username}";
     stateVersion = "25.11";
 
@@ -82,8 +82,8 @@
 
   programs.git = {
     enable = true;
-    userName = "pkino";
-    userEmail = "pkino@pkino.net";
+    userName = "l955a6";
+    userEmail = "75358673+l955a6@users.noreply.github.com";
     extraConfig = {
       core = {
         editor = "nvim";

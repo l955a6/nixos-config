@@ -92,9 +92,9 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.pkino = {
+  users.users.l955a6 = {
     isNormalUser = true;
-    description = "pkino";
+    description = "l955a6";
     extraGroups = [
       "networkmanager"
       "wheel"
