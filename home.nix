@@ -122,10 +122,6 @@
 
   programs.waybar.enable = true;
 
-  home.file = {
-    ".elan/settings.toml".text = builtins.readFile ./dotfiles/.elan/settings.toml;
-  };
-
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
