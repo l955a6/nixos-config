@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./features/tmux.nix
     ./features/firefox.nix
     ./features/alacritty.nix
     ./features/fish.nix
@@ -26,6 +25,9 @@
     # desktop
     waybar
     fuzzel
+
+    # terminal
+    tmux
 
     # env
     chezmoi
