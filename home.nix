@@ -118,8 +118,6 @@
       # tmp commit
       bind status  T     !git commit -m 'tmp'
     '';
-
-    "zathura/zathurarc".source = ./dotfiles/.config/zathura/zathurarc;
   };
 
   programs.waybar.enable = true;
