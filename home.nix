@@ -119,8 +119,6 @@
       bind status  T     !git commit -m 'tmp'
     '';
 
-    "niri/config.kdl".source = ./dotfiles/.config/niri/config.kdl;
-
     "zathura/zathurarc".source = ./dotfiles/.config/zathura/zathurarc;
   };
 
