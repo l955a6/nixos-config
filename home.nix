@@ -38,7 +38,7 @@
     fzf
     fd
     killall
-    xclip
+    wl-clipboard
 
     # font
     (stdenv.mkDerivation rec {
