@@ -27,6 +27,9 @@
     waybar
     fuzzel
 
+    # env
+    chezmoi
+
     # utils
     ripgrep
     jq
