@@ -18,30 +18,6 @@
       }
     );
 
-    userSettings = {
-      "workbench.colorTheme" = "Catppuccin Frappé";
-      "workbench.iconTheme" = "catppuccin-frappe";
-
-      "window.zoomLevel" = 2;
-
-      "editor.formatOnSave" = true;
-      "editor.rulers" = [ 100 ];
-      "editor.fontFamily" = "Cica";
-      "editor.fontSize" = 22;
-      "editor.renderWhitespace" = "boundary";
-      "terminal.integrated.fontFamily" = "Cica";
-      "files.eol" = "\n";
-
-      # Nix IDE config
-      "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
-      "nix.serverSettings" = {
-        "formatting" = {
-          "command" = [ "nixfmt" ];
-        };
-      };
-    };
-
     extensions =
       let
         vscode-marketplace = nix-vscode-extensions.extensions.${system}.vscode-marketplace;
