@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./features/tmux.nix
     ./features/firefox.nix
     ./features/alacritty.nix
     ./features/fish.nix
@@ -27,6 +26,12 @@
     waybar
     fuzzel
 
+    # terminal
+    tmux
+
+    # env
+    chezmoi
+
     # utils
     ripgrep
     jq
@@ -35,7 +40,7 @@
     fzf
     fd
     killall
-    xclip
+    wl-clipboard
 
     # font
     (stdenv.mkDerivation rec {
@@ -92,40 +97,7 @@
     };
   };
 
-  xdg.configFile = {
-    "git/ignore".text = ''
-      .envrc
-    '';
-
-    "tig/config".text = ''
-      set refresh-mode = auto
-
-      # move page-up/down like vim
-      bind generic <C-f> move-page-down
-      bind generic <C-b> move-page-up
-      bind generic g     none
-      bind generic gg    move-first-line
-      bind main    G     move-last-line
-      bind generic G     move-last-line
-
-      # execute rebase
-      bind main    <C-r> !git rebase -i %(commit)
-      bind generic <C-r> !git rebase -i %(commit) 
-
-      # tmp commit
-      bind status  T     !git commit -m 'tmp'
-    '';
-
-    "niri/config.kdl".source = ./dotfiles/.config/niri/config.kdl;
-
-    "zathura/zathurarc".source = ./dotfiles/.config/zathura/zathurarc;
-  };
-
   programs.waybar.enable = true;
-
-  home.file = {
-    ".elan/settings.toml".text = builtins.readFile ./dotfiles/.elan/settings.toml;
-  };
 
   programs.direnv = {
     enable = true;
