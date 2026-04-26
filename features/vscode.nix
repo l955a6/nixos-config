@@ -38,6 +38,7 @@
         gera2ld.markmap-vscode
         jetpack-io.devbox
         rogalmic.bash-debug
+        cab404.vscode-direnv
       ];
   };
 }
