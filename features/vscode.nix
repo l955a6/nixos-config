@@ -8,16 +8,6 @@
   programs.vscode = {
     enable = true;
 
-    package = (
-      pkgs.vscode.override {
-        commandLineArgs = [
-          "--ozone-platform=wayland"
-          "--enable-features=WaylandWindowDecorations"
-          "--enable-wayland-ime"
-        ];
-      }
-    );
-
     extensions =
       let
         vscode-marketplace = nix-vscode-extensions.extensions.${system}.vscode-marketplace;
