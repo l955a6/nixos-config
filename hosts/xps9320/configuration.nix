@@ -76,4 +76,9 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
   ];
+
+  services.udev.extraRules = ''
+    SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="${pkgs.brightnessctl}/bin/brightnessctl set 96000"
+    SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="${pkgs.brightnessctl}/bin/brightnessctl set 48000"
+  '';
 }
