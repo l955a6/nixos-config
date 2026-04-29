@@ -72,4 +72,8 @@
       size = 48 * 1024;
     }
   ];
+
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
 }
