@@ -64,6 +64,8 @@
     };
   };
 
+  powerManagement.enable = true;
+
   swapDevices = [
     {
       device = "/var/lib/swapfile";
