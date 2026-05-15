@@ -27,8 +27,6 @@
     # desktop
     waybar
     fuzzel
-    swaylock-fancy
-    swayidle
 
     # terminal
     tmux
@@ -59,18 +57,9 @@
       installPhase = "install -m644 --target $out/share/fonts/truetype/cica -D Cica-*.ttf";
     })
 
-    # programming-languages & version management tools
-    go
-    elan
-
-    # language servers & formatters
-
-    ## Nix Lang
+    # Nix Lang
     nixd
     nixfmt
-
-    ## golang
-    gopls
 
     # tui tools
     tig
@@ -84,7 +73,6 @@
 
     # misc
     tree
-    hyprshot
   ];
 
   xsession.enable = true;
@@ -113,5 +101,4 @@
   };
 
   programs.home-manager.enable = true;
-
 }
