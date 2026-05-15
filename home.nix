@@ -5,6 +5,8 @@
     ./features/alacritty.nix
     ./features/fish.nix
     ./features/vscode.nix
+    ./features/swaylock.nix
+    ./features/swayidle.nix
   ];
 
   home = rec {
@@ -55,18 +57,9 @@
       installPhase = "install -m644 --target $out/share/fonts/truetype/cica -D Cica-*.ttf";
     })
 
-    # programming-languages & version management tools
-    go
-    elan
-
-    # language servers & formatters
-
-    ## Nix Lang
+    # Nix Lang
     nixd
     nixfmt
-
-    ## golang
-    gopls
 
     # tui tools
     tig
@@ -80,7 +73,6 @@
 
     # misc
     tree
-    hyprshot
   ];
 
   xsession.enable = true;
