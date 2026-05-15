@@ -5,6 +5,8 @@
     ./features/alacritty.nix
     ./features/fish.nix
     ./features/vscode.nix
+    ./features/swaylock.nix
+    ./features/swayidle.nix
   ];
 
   home = rec {
@@ -112,32 +114,4 @@
 
   programs.home-manager.enable = true;
 
-  services.swayidle =
-    let
-      command = "${pkgs.swaylock-fancy}/bin/swaylock-fancy";
-    in
-    {
-      enable = true;
-      systemdTarget = "graphical-session.target";
-
-      extraArgs = [ "-w" ];
-
-      timeouts = [
-        {
-          timeout = 300;
-          command = command;
-        }
-      ];
-
-      events = [
-        {
-          event = "before-sleep";
-          command = command;
-        }
-        {
-          event = "lock";
-          command = command;
-        }
-      ];
-    };
 }
