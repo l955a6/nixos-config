@@ -25,6 +25,8 @@
     # desktop
     waybar
     fuzzel
+    swaylock-fancy
+    swayidle
 
     # terminal
     tmux
@@ -109,4 +111,33 @@
   };
 
   programs.home-manager.enable = true;
+
+  services.swayidle =
+    let
+      command = "${pkgs.swaylock-fancy}/bin/swaylock-fancy";
+    in
+    {
+      enable = true;
+      systemdTarget = "graphical-session.target";
+
+      extraArgs = [ "-w" ];
+
+      timeouts = [
+        {
+          timeout = 300;
+          command = command;
+        }
+      ];
+
+      events = [
+        {
+          event = "before-sleep";
+          command = command;
+        }
+        {
+          event = "lock";
+          command = command;
+        }
+      ];
+    };
 }
