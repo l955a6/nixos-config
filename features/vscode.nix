@@ -24,11 +24,6 @@
         leanprover.lean4
         # misc
         asvetliakov.vscode-neovim
-        marp-team.marp-vscode
-        gera2ld.markmap-vscode
-        jetpack-io.devbox
-        rogalmic.bash-debug
-        cab404.vscode-direnv
       ];
   };
 }
