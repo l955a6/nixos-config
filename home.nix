@@ -79,9 +79,11 @@
 
   programs.git = {
     enable = true;
-    userName = "l955a6";
-    userEmail = "75358673+l955a6@users.noreply.github.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "l955a6";
+        email = "75358673+l955a6@users.noreply.github.com";
+      };
       core = {
         editor = "nvim";
         excludesfile = "${config.home.homeDirectory}/.config/git/ignore";

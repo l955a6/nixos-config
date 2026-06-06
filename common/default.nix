@@ -23,12 +23,13 @@
   };
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
+    enable = true;
+    type = "fcitx5";
     fcitx5.addons = [ pkgs.fcitx5-mozc ];
   };
 
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
@@ -67,7 +68,7 @@
   services.xserver.enable = true;
 
   # Enable the niri
-  services.xserver.displayManager.gdm.enable = true;
+  services.displayManager.gdm.enable = true;
   programs.niri.enable = true;
   # Electron apps to use Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -76,7 +77,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

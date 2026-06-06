@@ -45,7 +45,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.l955a6.imports = [
                 ./home.nix
-                catppuccin.homeManagerModules.catppuccin
+                catppuccin.homeModules.catppuccin
               ];
               home-manager.extraSpecialArgs = {
                 inherit firefox-addons;
@@ -68,7 +68,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.l955a6.imports = [
                 ./home.nix
-                catppuccin.homeManagerModules.catppuccin
+                catppuccin.homeModules.catppuccin
               ];
               home-manager.extraSpecialArgs = {
                 inherit firefox-addons;
