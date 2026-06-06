@@ -24,6 +24,7 @@
         leanprover.lean4
         # misc
         asvetliakov.vscode-neovim
+        tamasfe.even-better-toml
       ];
   };
 }
