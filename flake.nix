@@ -2,7 +2,7 @@
   description = "l955a6's NixOS flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,7 +68,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.l955a6.imports = [
                 ./home.nix
-                catppuccin.homeManagerModules.catppuccin
+                catppuccin.homeModules.catppuccin
               ];
               home-manager.extraSpecialArgs = {
                 inherit firefox-addons;
