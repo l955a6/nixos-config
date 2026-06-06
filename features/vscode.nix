@@ -8,7 +8,7 @@
   programs.vscode = {
     enable = true;
 
-    extensions =
+    profiles.default.extensions =
       let
         vscode-marketplace = nix-vscode-extensions.extensions.${system}.vscode-marketplace;
       in
