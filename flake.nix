@@ -11,7 +11,7 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions/fd5c5549692ff4d2dbee1ab7eea19adc2f97baeb";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions/71c0866249f0ae2f97ff6f0894057e232acc5dbb";
     catppuccin.url = "github:catppuccin/nix";
   };
 
