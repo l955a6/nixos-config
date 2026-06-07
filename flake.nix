@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +20,7 @@
     inputs@{
       self,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       firefox-addons,
       nix-vscode-extensions,
@@ -28,6 +30,10 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
       };
@@ -51,6 +57,7 @@
                 inherit firefox-addons;
                 inherit nix-vscode-extensions;
                 inherit pkgs;
+                inherit pkgs-unstable;
                 inherit system;
               };
             }
@@ -74,6 +81,7 @@
                 inherit firefox-addons;
                 inherit nix-vscode-extensions;
                 inherit pkgs;
+                inherit pkgs-unstable;
                 inherit system;
               };
             }
