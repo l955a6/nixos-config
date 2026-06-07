@@ -9,11 +9,7 @@
     enable = true;
 
     profiles.default.extensions =
-      let
-        vscode-marketplace = nix-vscode-extensions.extensions.${system}.vscode-marketplace;
-      in
-      with vscode-marketplace;
-      [
+      with nix-vscode-extensions.extensions.${system}.vscode-marketplace-release; [
         # theme
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
@@ -24,6 +20,7 @@
         leanprover.lean4
         # misc
         asvetliakov.vscode-neovim
+        tamasfe.even-better-toml
       ];
   };
 }
