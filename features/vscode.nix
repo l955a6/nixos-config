@@ -1,5 +1,5 @@
 {
-  pkgs-unstable,
+  pkgs,
   nix-vscode-extensions,
   system,
   ...
@@ -7,8 +7,6 @@
 {
   programs.vscode = {
     enable = true;
-
-    package = pkgs-unstable.vscode;
 
     profiles.default.extensions =
       with nix-vscode-extensions.extensions.${system}.vscode-marketplace-release; [
