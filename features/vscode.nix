@@ -14,7 +14,7 @@
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
         # lsp clients
-        jnoortheen.nix-ide
+        pkgs.vscode-extensions.jnoortheen.nix-ide
         scalameta.metals
         golang.go
         leanprover.lean4
