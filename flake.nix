@@ -31,6 +31,7 @@
         inherit system;
         config.allowUnfree = true;
       };
+      firefox-addons-unfree = pkgs.callPackage firefox-addons { };
     in
     {
       nixosConfigurations = {
@@ -48,7 +49,7 @@
                 catppuccin.homeModules.catppuccin
               ];
               home-manager.extraSpecialArgs = {
-                inherit firefox-addons;
+                inherit firefox-addons-unfree;
                 inherit nix-vscode-extensions;
                 inherit pkgs;
                 inherit system;
@@ -71,7 +72,7 @@
                 catppuccin.homeModules.catppuccin
               ];
               home-manager.extraSpecialArgs = {
-                inherit firefox-addons;
+                inherit firefox-addons-unfree;
                 inherit nix-vscode-extensions;
                 inherit pkgs;
                 inherit system;
