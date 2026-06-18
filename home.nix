@@ -67,12 +67,14 @@
     # gui tools
     zathura
     obsidian
+    _1password-gui
 
     # software-development
     devbox
 
     # misc
     tree
+    _1password-cli
   ];
 
   xsession.enable = true;
