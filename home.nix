@@ -63,6 +63,7 @@
 
     # tui tools
     tig
+    claude-code
 
     # gui tools
     zathura

@@ -13,6 +13,10 @@
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions/71c0866249f0ae2f97ff6f0894057e232acc5dbb";
     catppuccin.url = "github:catppuccin/nix";
+    nix-claude-code = {
+      url = "github:ryoppippi/nix-claude-code";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -23,6 +27,7 @@
       firefox-addons,
       nix-vscode-extensions,
       catppuccin,
+      nix-claude-code,
       ...
     }:
     let
@@ -30,6 +35,7 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [ nix-claude-code.overlays.default ];
       };
       firefox-addons-unfree = pkgs.callPackage firefox-addons { };
     in
