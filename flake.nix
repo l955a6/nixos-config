@@ -35,7 +35,10 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ nix-claude-code.overlays.default ];
+        overlays = [
+          nix-claude-code.overlays.default
+          nix-vscode-extensions.overlays.default
+        ];
       };
       firefox-addons-unfree = pkgs.callPackage firefox-addons { };
     in
@@ -56,7 +59,6 @@
               ];
               home-manager.extraSpecialArgs = {
                 inherit firefox-addons-unfree;
-                inherit nix-vscode-extensions;
                 inherit pkgs;
                 inherit system;
               };
@@ -79,7 +81,6 @@
               ];
               home-manager.extraSpecialArgs = {
                 inherit firefox-addons-unfree;
-                inherit nix-vscode-extensions;
                 inherit pkgs;
                 inherit system;
               };

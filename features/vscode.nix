@@ -1,7 +1,5 @@
 {
   pkgs,
-  nix-vscode-extensions,
-  system,
   ...
 }:
 {
@@ -9,7 +7,7 @@
     enable = true;
 
     profiles.default.extensions =
-      with nix-vscode-extensions.extensions.${system}.vscode-marketplace-release; [
+      with pkgs.vscode-marketplace-release; [
         # theme
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
@@ -21,6 +19,7 @@
         # misc
         asvetliakov.vscode-neovim
         tamasfe.even-better-toml
+        ms-vscode-remote.remote-containers
       ];
   };
 }
